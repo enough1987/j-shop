@@ -1,0 +1,23 @@
+<div class="form-group">
+    <label for="product-name">product Name</label>
+    <input 
+          type="text" 
+          class="form-control" 
+          id="product-name" 
+          placeholder="product Name"
+          [(ngModel)]="productName"
+    >
+</div>
+<div class="form-group">
+    <label for="product-model">product Model</label>
+    <input 
+          type="text" 
+          class="form-control" 
+          id="product-model" 
+          placeholder="product Model"
+          [(ngModel)]="productModel"
+    >
+</div>
+
+<button type="button" (click)="onAdd()" class="btn btn-outline-primary">Add product</button>
+<button type="button" (click)="onLoad()" class="btn btn-outline-warning">Load product</button>

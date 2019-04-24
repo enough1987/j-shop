@@ -7,20 +7,29 @@ import { MyOwnCustomMaterialModule } from './shared/MyOwnCustomMaterialModule';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ProductComponent } from './product/product.component';
+import { ProductsFormComponent } from './products-form/products-form.component';
+
+import { StoreModule } from '@ngrx/store';
+import { ProductsReducer } from './redux/products.reducer';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
-  ],
+    AppComponent,
+    ProductComponent,
+    ProductsFormComponent,
+],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
+    MyOwnCustomMaterialModule,
+    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MyOwnCustomMaterialModule
+    StoreModule.forRoot({ProductPage: ProductsReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]

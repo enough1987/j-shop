@@ -1,30 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import {  Product } from './product.model';
+import { Products } from './product.model';
 import { Store } from '@ngrx/store';
 import { AppState } from './redux/app.state';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
-
-public products: Product[] = [];
+export class AppComponent implements OnInit {
+public productState: Observable<Products>;
 
 constructor(private store: Store<AppState>) {}
 
 ngOnInit() {
-  this.store.select('ProductPage').subscribe(d => {
-  console.log(d);
-  });
+  this.productState = this.store.select('ProductPage');
 }
 
-onAdd(product: Product) {
-  this.products.push(product);
-}
-onDelete(product: Product) {
- this.products =  this.products.filter(prod => prod.id !== product.id);
-}
 
 }

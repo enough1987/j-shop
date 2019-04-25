@@ -1,22 +1,22 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component} from '@angular/core';
 import { Product } from './../product.model';
+import { Store } from '@ngrx/store';
+import { AppState } from '../redux/app.state';
+import { AddProduct } from '../redux/products.action';
 
 @Component({
   selector: 'app-products-form',
   templateUrl: './products-form.component.html',
   styleUrls: ['./products-form.component.scss']
 })
-export class ProductsFormComponent implements OnInit {
+export class ProductsFormComponent {
   private id = 2;
   productName = '';
   productModel = '';
 
-  @Output() AddProduct = new EventEmitter<Product>();
 
-  constructor() { }
+  constructor(private store: Store<AppState>) { }
 
-  ngOnInit() {
-  }
   onAdd() {
 // tslint:disable-next-line: curly
     if (this.productName === '' || this.productModel === '' )  return;
@@ -30,8 +30,7 @@ export class ProductsFormComponent implements OnInit {
       this.id
     );
 
-
-    this.AddProduct.emit(product)
+    this.store.dispatch(new AddProduct(product));
 
     this.productName = '';
     this.productModel = '';

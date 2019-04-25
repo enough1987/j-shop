@@ -1,4 +1,5 @@
-import { Product } from '../product.model';
+import { Product } from '../models/product.model';
+
 
 export interface AppState {
     ProductPage: {

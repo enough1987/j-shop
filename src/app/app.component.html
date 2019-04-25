@@ -6,8 +6,9 @@
         <div class="col-md-6">
             <div class="list-group">
                  <app-product
-                 [product]="prod"
-                 *ngFor="let prod of (productState | async).products"></app-product>
+                    [product]="prod"
+                    *ngFor="let prod of (productState | async).products">
+               </app-product>
             </div>
          </div>
     </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Products } from './product.model';
+import { Products } from './models/product.model';
 import { Store } from '@ngrx/store';
 import { AppState } from './redux/app.state';
 import { Observable } from 'rxjs';

@@ -1,5 +1,5 @@
 
-import { Product } from '../product.model';
+import { Product } from '../models/product.model';
 import { PRODUCT_ACTION, ProductsAction } from './products.action';
 
 const initialState = {
@@ -33,5 +33,4 @@ export function ProductsReducer(state = initialState, action: ProductsAction) {
         default:
            return state;
     }
- 
 }

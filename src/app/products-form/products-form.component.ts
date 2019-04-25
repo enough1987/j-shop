@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { Product } from './../product.model';
+import { Product } from '../models/product.model';
 import { Store } from '@ngrx/store';
 import { AppState } from '../redux/app.state';
 import { AddProduct } from '../redux/products.action';

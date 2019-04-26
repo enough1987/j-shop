@@ -1,8 +1,8 @@
 import { Component} from '@angular/core';
 import { Product } from '../models/product.model';
 import { Store } from '@ngrx/store';
-import { AppState } from '../redux/app.state';
-import { AddProduct } from '../redux/products.action';
+import { AppState } from '../store/app.state';
+import { AddProduct } from '../store/products.action';
 
 @Component({
   selector: 'app-products-form',
@@ -18,8 +18,10 @@ export class ProductsFormComponent {
   constructor(private store: Store<AppState>) { }
 
   onAdd() {
-// tslint:disable-next-line: curly
-    if (this.productName === '' || this.productModel === '' )  return;
+
+    if (this.productName === '' || this.productModel === '' ) {
+       return;
+    }
 
     this.id = ++this.id;
 
@@ -37,6 +39,5 @@ export class ProductsFormComponent {
 
   }
 
-  onLoad() {}
 
 }

@@ -7,7 +7,7 @@
             <div class="list-group">
                  <app-product
                     [product]="prod"
-                    *ngFor="let prod of (productState | async).products">
+                    *ngFor="let prod of (products | async).products">
                </app-product>
             </div>
          </div>

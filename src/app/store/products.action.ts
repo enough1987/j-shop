@@ -6,7 +6,7 @@ import { Product } from '../models/product.model';
 export namespace PRODUCT_ACTION {
     export const ADD_PRODUCT = 'ADD_PRODUCT';
     export const DELETE_PRODUCT = 'DELETE_PRODUCT';
-    export const UDATE_PRODUCT = 'UDATE_PRODUCT';
+    export const UPDATE_PRODUCT = 'UPDATE_PRODUCT';
 }
 
 export class AddProduct implements Action {
@@ -20,10 +20,10 @@ export class DeleteProduct implements Action {
     constructor(public payload: Product) {}
 }
 
-export class UpdateProduct implements Action {
-    readonly type = PRODUCT_ACTION.UDATE_PRODUCT;
+export class EditProduct implements Action {
+    readonly type = PRODUCT_ACTION.UPDATE_PRODUCT;
 
     constructor(public payload: Product) {}
 }
 
-export type ProductsAction = AddProduct | DeleteProduct | UpdateProduct;
+export type ProductsAction = AddProduct | DeleteProduct | EditProduct;

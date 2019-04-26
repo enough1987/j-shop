@@ -1,8 +1,6 @@
 import { Component, Input} from '@angular/core';
 import { Product } from '../models/product.model';
-import { AppState } from './../redux/app.state';
-import { Store } from '@ngrx/store';
-import { DeleteProduct, UpdateProduct } from './../redux/products.action';
+import { ProductsService } from '../services/products.service';
 
 
 @Component({
@@ -13,14 +11,14 @@ import { DeleteProduct, UpdateProduct } from './../redux/products.action';
 export class ProductComponent  {
 
 @Input() product: Product;
- constructor(private store: Store<AppState> ) {}
+ constructor( private productService: ProductsService) {}
 
   onDelete() {
-   this.store.dispatch(new DeleteProduct(this.product));
+    this.productService.delete(this.product);
   }
 
-  onBuy() {
-    this.store.dispatch(new UpdateProduct(this.product));
+  onEdit() {
+    this.productService.edit(this.product);
   }
 
 }

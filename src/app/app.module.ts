@@ -4,14 +4,16 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MyOwnCustomMaterialModule } from './shared/MyOwnCustomMaterialModule';
-
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
 import { ProductsFormComponent } from './products-form/products-form.component';
 
 import { StoreModule } from '@ngrx/store';
-import { ProductsReducer } from './redux/products.reducer';
+import { ProductsReducer } from './store/products.reducer';
+// Service
+import { ProductsService } from './services/products.service';
 
 
 
@@ -31,7 +33,7 @@ import { ProductsReducer } from './redux/products.reducer';
     HttpClientModule,
     StoreModule.forRoot({ProductPage: ProductsReducer})
   ],
-  providers: [],
+  providers: [ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

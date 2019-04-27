@@ -1,23 +1,32 @@
-<div class="form-group">
-    <label for="product-name">product Name</label>
-    <input 
-          type="text" 
-          class="form-control" 
-          id="product-name" 
-          placeholder="product Name"
-          [(ngModel)]="productName"
-    >
-</div>
-<div class="form-group">
-    <label for="product-model">product Model</label>
-    <input 
-          type="text" 
-          class="form-control" 
-          id="product-model" 
-          placeholder="product Model"
-          [(ngModel)]="productModel"
-    >
-</div>
-
-<button type="button" (click)="onAdd()" class="btn btn-outline-primary">Add product</button>
-
+<form [formGroup]="form" (ngSubmit)="onAdd()">
+    <div class="form-group">
+        <label for="product-name">product Name</label>
+        <input 
+              formControlName="productName"
+              type="text" 
+              class="form-control"
+              [(ngModel)]="productName"
+        >
+        <p *ngIf="form.get('productName').invalid && 
+                  form.get('productName').touched">
+                  Input name Product
+        </p>
+    </div>
+    <div class="form-group">
+        <label for="product-model">product Model</label>
+        <input 
+              formControlName="productModel"
+              type="text" 
+              class="form-control"
+              [(ngModel)]="productModel"
+        >
+        <p *ngIf="form.get('productModel').invalid && 
+                  form.get('productModel').touched">Input model Product</p>
+    </div>
+    <button
+         type="submit" 
+         class="btn btn-outline-primary"
+         [disabled]="form.invalid"
+         >Add  product
+    </button>
+</form> 

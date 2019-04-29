@@ -17,7 +17,7 @@ export function ProductsReducer(state = initialState, action: ProductsAction) {
         case PRODUCT_ACTION.ADD_PRODUCT:
            return {
                ...state,
-               products: [...state.products, action.payload]
+               products: [...state.products, new Product(action.payload.name, action.payload.model, false, Math.random())]
            };
         case PRODUCT_ACTION.DELETE_PRODUCT:
             return {

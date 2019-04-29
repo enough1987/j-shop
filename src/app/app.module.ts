@@ -10,12 +10,17 @@ import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
 import { ProductsFormComponent } from './products-form/products-form.component';
 
-import { StoreModule } from '@ngrx/store';
+import { StoreModule, ActionReducer, State } from '@ngrx/store';
 import { ProductsReducer } from './store/products.reducer';
 // Service
 import { ProductsService } from './services/products.service';
+import { storeLogger } from 'ngrx-store-logger';
 
-
+export function logger(reducer: ActionReducer<any>): any {
+  // default, no options
+  return storeLogger({collapsed: true})(reducer);
+}
+export const metaReducers = [logger];
 
 @NgModule({
   declarations: [
@@ -31,7 +36,7 @@ import { ProductsService } from './services/products.service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    StoreModule.forRoot({ProductPage: ProductsReducer})
+    StoreModule.forRoot({ProductPage: ProductsReducer}, {metaReducers})
   ],
   providers: [ProductsService],
   bootstrap: [AppComponent]

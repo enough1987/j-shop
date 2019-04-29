@@ -1,6 +1,7 @@
 import { Component, Input} from '@angular/core';
-import { Product } from '../models/product.model';
-import { ProductsService } from '../services/products.service';
+import { Product } from 'src/app/models/product.model';
+import { ProductsService } from 'src/app/services/products.service';
+
 
 
 @Component({

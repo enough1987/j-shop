@@ -1,8 +1,9 @@
 import { Component, OnInit} from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState } from '../store/app.state';
-import { AddProduct } from '../store/products.action';
 import { Validators, FormGroup, FormControl} from '@angular/forms';
+import { AppState } from 'src/app/store/app.state';
+import { AddProduct } from 'src/app/store/products.action';
+
 
 @Component({
   selector: 'app-products-form',
@@ -28,10 +29,14 @@ export class ProductsFormComponent implements OnInit {
 
   }
 
-
-
   onAdd() {
     this.store.dispatch(new AddProduct(this.form.value));
+
+    this.reset();
+  }
+
+  reset() {
+    this.form.reset({ name: '', model: '' });
   }
 
 

@@ -1,6 +1,8 @@
-import { Product } from '../admin/models/product.model';
 import { ActionReducer } from '@ngrx/store';
 import { storeLogger } from 'ngrx-store-logger';
+
+
+import { Product } from '../admin/models/product.model';
 
 
 export interface AppState {

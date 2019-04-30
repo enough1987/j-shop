@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { DeleteProduct, EditProduct } from '../store/products.action';
+import { DeleteProduct, EditProduct } from '../../store/products.action';
 import { Store } from '@ngrx/store';
-import { AppState } from '../store/app.state';
-import { Product, Products } from '../models/product.model';
+import { AppState } from '../../store/app.state';
+
 import { Observable } from 'rxjs';
+import { Products, Product } from '../models/product.model';
 
 
 @Injectable()

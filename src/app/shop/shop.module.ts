@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MyOwnCustomMaterialModule } from '../shared/MyOwnCustomMaterialModule';
 import { ShopComponent } from './shop/shop.component';
+import { ShopRoutingModule } from './shop-routing.module';
 
 @NgModule({
   declarations: [
@@ -9,7 +10,8 @@ import { ShopComponent } from './shop/shop.component';
   ],
   imports: [
     CommonModule,
-    MyOwnCustomMaterialModule
+    MyOwnCustomMaterialModule,
+    ShopRoutingModule
   ],
   exports: [
     ShopComponent

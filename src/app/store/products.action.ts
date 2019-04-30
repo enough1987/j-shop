@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Product } from '../models/product.model';
+import { Product } from '../admin/models/product.model';
 
 
 // tslint:disable-next-line: no-namespace

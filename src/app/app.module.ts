@@ -6,18 +6,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { MyOwnCustomMaterialModule } from './shared/MyOwnCustomMaterialModule';
 import { AppRoutingModule } from './app-routing.module';
 import { ShopModule } from './shop/shop.module';
-import { ProductModule } from './products/product.module';
+
 
 import { AppComponent } from './app.component';
 // Service
-import { ProductsService } from './services/products.service';
-import { NavigateComponent } from './navigate/navigate.component';
+import { ProductsService } from './admin/services/products.service';
+import { AdminModule } from './admin/admin.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigateComponent,
 ],
   imports: [
     BrowserModule,
@@ -28,9 +27,8 @@ import { NavigateComponent } from './navigate/navigate.component';
     ReactiveFormsModule,
     HttpClientModule,
     ShopModule,
-    ProductModule,
+    AdminModule,
   ],
-  providers: [ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

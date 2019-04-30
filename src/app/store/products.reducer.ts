@@ -1,5 +1,5 @@
 
-import { Product } from '../models/product.model';
+import { Product } from '../admin/models/product.model';
 import { PRODUCT_ACTION, ProductsAction } from './products.action';
 
 const initialState = {

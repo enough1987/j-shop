@@ -1,17 +1,1 @@
- <div class="container">
-    <div class="row">
-         <div class="col-md-6">
-             <app-products-form
-             (AddProduct)="onAdd($event)"
-             ></app-products-form>
-        </div>
-        <div class="col-md-6">
-            <div class="list-group">
-                 <app-product
-                 (deleteProduct)="onDelete($event)" 
-                 [product]="prod"
-                 *ngFor="let prod of products"></app-product>
-            </div>
-         </div>
-    </div>
-</div> 
+<router-outlet></router-outlet>

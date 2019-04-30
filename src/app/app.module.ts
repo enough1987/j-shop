@@ -14,6 +14,11 @@ import { AdminModule } from './admin/admin.module';
 import { ProductsReducer } from './store/products.reducer';
 import { metaReducers } from './store/app.state';
 
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +35,9 @@ import { metaReducers } from './store/app.state';
     SharedModule,
     ShopModule,
     AdminModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
   ],
   bootstrap: [AppComponent]
 })

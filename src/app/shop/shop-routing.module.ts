@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
+
 import { ShopComponent } from './shop/shop.component';
-
-
 
 
 const shopRoutes: Routes = [

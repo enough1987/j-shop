@@ -1,6 +1,6 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Validators, FormGroup, FormControl} from '@angular/forms';
+import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { AppState } from 'src/app/store/app.state';
 import { AddProduct } from 'src/app/store/products.action';
 
@@ -19,14 +19,12 @@ export class ProductsFormComponent implements OnInit {
     this.initForm();
   }
 
- initForm() {
+  initForm() {
     this.form = new FormGroup({
       name: new FormControl('', Validators.required),
       model: new FormControl('', Validators.required),
 
     });
-
-
   }
 
   onAdd() {
@@ -38,8 +36,5 @@ export class ProductsFormComponent implements OnInit {
   reset() {
     this.form.reset({ name: '', model: '' });
   }
-
-
-
 
 }

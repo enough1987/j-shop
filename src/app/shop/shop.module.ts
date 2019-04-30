@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MyOwnCustomMaterialModule } from '../shared/MyOwnCustomMaterialModule';
+
+
+import { SharedModule } from '../shared/SharedModule';
 import { ShopComponent } from './shop/shop.component';
 import { ShopRoutingModule } from './shop-routing.module';
 
@@ -10,11 +12,10 @@ import { ShopRoutingModule } from './shop-routing.module';
   ],
   imports: [
     CommonModule,
-    MyOwnCustomMaterialModule,
+    SharedModule,
     ShopRoutingModule
   ],
   exports: [
-    ShopComponent
   ]
 })
 export class ShopModule { }

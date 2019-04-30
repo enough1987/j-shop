@@ -7,7 +7,7 @@ import { SharedModule } from '../shared/SharedModule';
 import { ProductComponent } from './components/product/product.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductsFormComponent } from './components/products-form/products-form.component';
-import { AdminComponent } from './admin.component';
+import { AdminComponent } from './components/admin/admin.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { ProductsService } from './services/products.service';
 

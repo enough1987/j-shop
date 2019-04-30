@@ -18,8 +18,8 @@ export class NavigateComponent {
   constructor(private breakpointObserver: BreakpointObserver) {}
 
   links: object[] = [
-    { path: '/app-root', label: 'Product', active: 'button-active'},
-     { path: '/app-admin', label: 'Admin', active: 'button-active'}
+    { path: '/app-products', label: 'Product', active: 'button-active'},
+     { path: '/app-shop', label: 'Shop', active: 'button-active'}
   ];
 
 

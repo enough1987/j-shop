@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AdminComponent } from './admin/admin.component';
 import { MyOwnCustomMaterialModule } from '../shared/MyOwnCustomMaterialModule';
+import { ShopComponent } from './shop/shop.component';
 
 @NgModule({
   declarations: [
-    AdminComponent
+    ShopComponent
   ],
   imports: [
     CommonModule,
     MyOwnCustomMaterialModule
   ],
   exports: [
-    AdminComponent
+    ShopComponent
   ]
 })
-export class AdminModule { }
+export class ShopModule { }

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 
 import { SharedModule } from '../shared/SharedModule';
-import { ShopComponent } from './shop/shop.component';
+import { ShopComponent } from './components/shop/shop.component';
 import { ShopRoutingModule } from './shop-routing.module';
 
 @NgModule({

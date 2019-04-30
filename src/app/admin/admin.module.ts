@@ -4,9 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { SharedModule } from '../shared/SharedModule';
-import { ProductComponent } from './product/product/product.component';
-import { ProductsComponent } from './product/products/products.component';
-import { ProductsFormComponent } from './product/products-form/products-form.component';
+import { ProductComponent } from './components/product/product.component';
+import { ProductsComponent } from './components/products/products.component';
+import { ProductsFormComponent } from './components/products-form/products-form.component';
 import { AdminComponent } from './admin.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { ProductsService } from './services/products.service';

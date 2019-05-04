@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
-
+import { EffectsModule } from '@ngrx/effects';
 
 import { SharedModule } from './shared/SharedModule';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +18,8 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { ProductsEffects } from './store/products.effects';
+
 
 
 @NgModule({
@@ -38,6 +40,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    EffectsModule.forRoot([ProductsEffects])
   ],
   bootstrap: [AppComponent]
 })

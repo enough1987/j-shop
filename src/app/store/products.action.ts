@@ -6,8 +6,9 @@ import { Product } from '../admin/models/product.model';
 
 export enum PRODUCT_ACTION {
     ADD_PRODUCT = 'ADD_PRODUCT',
+    ADD_PRODUCT_SUCCES = 'ADD_PRODUCT_SUCCES',
     DELETE_PRODUCT = 'DELETE_PRODUCT',
-    UPDATE_PRODUCT = 'UPDATE_PRODUCT'
+    UPDATE_PRODUCT = 'UPDATE_PRODUCT',
 }
 
 export class AddProduct implements Action {
@@ -15,6 +16,7 @@ export class AddProduct implements Action {
 
     constructor(public payload: Product) { }
 }
+
 export class DeleteProduct implements Action {
     readonly type = PRODUCT_ACTION.DELETE_PRODUCT;
 

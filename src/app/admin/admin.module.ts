@@ -10,6 +10,7 @@ import { ProductsFormComponent } from './components/products-form/products-form.
 import { AdminComponent } from './components/admin/admin.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { ProductsService } from './services/products.service';
+import { EffectsModule } from '@ngrx/effects';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ProductsService } from './services/products.service';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    EffectsModule.forFeature([])
   ],
   exports: [
   ],

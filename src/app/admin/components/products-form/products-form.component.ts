@@ -5,6 +5,7 @@ import { AppState } from 'src/app/store/app.state';
 import { AddProduct } from 'src/app/store/products.action';
 
 
+
 @Component({
   selector: 'app-products-form',
   templateUrl: './products-form.component.html',
@@ -29,12 +30,13 @@ export class ProductsFormComponent implements OnInit {
 
   onAdd() {
     this.store.dispatch(new AddProduct(this.form.value));
-
     this.reset();
+
   }
 
   reset() {
     this.form.reset({ name: '', model: '' });
   }
+
 
 }
